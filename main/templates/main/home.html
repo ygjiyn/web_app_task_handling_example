@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div class="row" style="height: 100%;">
+  <div class="col-4 text-center" style="height: 100%;">
+    <div class="card" style="height: 100%;">
+      <div class="card-body">
+        <h2 class="card-title">Submit Task 1</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'main:submit_1' %}" class="btn btn-primary">Submit Task 1</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 text-center" style="height: 100%;">
+    <div class="card" style="height: 100%;">
+      <div class="card-body">
+        <h2 class="card-title">Submit Task 2</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'main:submit_2' %}" class="btn btn-primary">Submit Task 2</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 text-center" style="height: 100%;">
+    <div class="card" style="height: 100%;">
+      <div class="card-body">
+        <h2 class="card-title">Submit Task 3</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'main:submit_3' %}" class="btn btn-primary">Submit Task 3</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block otherscripts %}
+<script src="{% static 'main/submit1.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="mx-5">
+    <h1>Submit Task 1</h1>
+
+    <form class="row mt-5 mx-5 g-3" action="{% url 'main:submit_1' %}" method="post">
+        {% csrf_token %}
+        <div class="col-6">
+            <label for="field1" class="form-label">Field 1</label>
+            <input type="text" class="form-control" id="field1" name="field1" placeholder="Placeholder for Field 1">
+            <div id="field1Feedback" class="invisible">
+                Placeholder
+            </div>
+        </div>
+        <div class="col-6">
+            <label for="field2" class="form-label">Field 2</label>
+            <input type="text" class="form-control" id="field2" name="field2" placeholder="Placeholder for Field 2">
+            <div id="field2Feedback" class="invisible">
+                Placeholder
+            </div>
+        </div>
+        <div class="col-12 mt-5">
+            <button type="submit" class="btn btn-primary" id="submitButton" disabled>Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

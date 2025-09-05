@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'main/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'main/main.css' %}" rel="stylesheet">
+    <script src="{% static 'main/bootstrap/dist/js/bootstrap.bundle.min.js' %}" defer></script>
+    <script src="{% static 'main/main.js' %}" defer></script>
+    {% block otherscripts %}{% endblock %}
+    <title>Web App</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-body-secondary">
+        <div class="container-fluid my-1">
+            <div class="navbar-brand mx-5"><b>Navbar</b></div>
+            <!--toggler for menu items when the width is small-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-3">
+                        <a class="nav-link{% if navbar_select == 'home' %} active my-active{% endif %}" href="{% url 'main:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle{% if navbar_select == 'submit' %} active my-active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Submit
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'main:submit_1' %}">Submit Task 1</a></li>
+                            <li><a class="dropdown-item" href="{% url 'main:submit_2' %}">Submit Task 2</a></li>
+                            <li><a class="dropdown-item" href="{% url 'main:submit_3' %}">Submit Task 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link{% if navbar_select == 'result' %} active my-active{% endif %}" href="{% url 'main:result' %}">Result</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link{% if navbar_select == 'status' %} active my-active{% endif %}" href="{% url 'main:status' %}">Status</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container my-5" style="height: 70vh;">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="container text-center">&copy; 2025 Authors. All rights reserved.</div>
+    </footer>
+  </body>
+</html>

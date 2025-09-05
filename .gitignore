@@ -1,0 +1,6 @@
+.DS_Store
+db.sqlite3
+__pycache__
+node_modules
+/main/static/main/bootstrap
+/main/static/main/*.js

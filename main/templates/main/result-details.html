@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block otherscripts %}
+<script src="{% static 'main/resultDetails.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Task Information</h2>
+<hr>
+<div class="d-flex justify-content-center">
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+            <div>
+                <div class="fw-bold">Task ID</div>
+                <div>{{ task_id }}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div>
+                <div class="fw-bold">Status</div>
+                <div id="taskStatus">{{ status }}</div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<h2 class="text-center mt-5">Task Result</h2>
+<hr>
+<div>
+    <div>Task result</div>
+    <div id="taskResult" data-task-id="{{ task_id }}">Please wait</div>
+</div>
+{% endblock %}

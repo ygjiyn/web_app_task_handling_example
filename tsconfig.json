@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2015", "dom"],
+    "rootDir": "ts_src",
+    "outDir": "main/static/main",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["ts_src/**/*"]
+}
